@@ -2,7 +2,12 @@ package buscaminas.buscamina;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
+
+import junit.framework.Assert;
+
 import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -23,15 +28,21 @@ class TestCasilla {
 	public void testDestaparCasilla() {
 		/*TDD, Particiones equivalentes*/
 	
-		Tablero tablero = new Tablero();
-		tablero.crearTablero(2, 2);
+		//Destapar casilla sin mina
+		Casilla casilla1 = new Casilla(1,1);
+		casilla1.setEstadoCasilla(0); //Tapada
+		casilla1.setTipoCasilla(0); //sin mina
+		int result1 = casilla1.destaparCasilla();
+		assertFalse(casilla1.esTapada());
+		assertEquals(result1, 0);
 		
-		//Destapar casilla 1,1
-		tablero.getTablero()[1][1].destaparCasilla();
-		assertFalse(tablero.getTablero()[1][1].esTapada());
-		
-		//Casilla no destapada
-		assertTrue(tablero.getTablero()[1][0].esTapada());
+		//Destapar casilla con mina
+		Casilla casilla2 = new Casilla(1,1);
+		casilla2.setEstadoCasilla(0); //Tapada
+		casilla2.setTipoCasilla(1); //sin mina
+		int result2 = casilla2.destaparCasilla();
+		assertFalse(casilla2.esTapada());
+		assertEquals(result2, 1);
 	}
 	/*
 	 * Test del método colocarMina

@@ -39,7 +39,7 @@ class TestJuego {
 		juego.comprobarJuego("1 1");
 		assertTrue(juego.getEstadoJuego());
 		
-		//CASO DE PERDER
+		//CASO DE PERDER 
 		juego.getTablero().getTablero()[1][1].setEstadoCasilla(0);
 		juego.getTablero().getTablero()[1][1].setTipoCasilla(1);
 		

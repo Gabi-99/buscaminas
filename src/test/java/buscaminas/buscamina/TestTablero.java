@@ -32,7 +32,7 @@ class TestTablero {
 	 */
 	@Test
 	public void testCrearTablero() {
-		/*Loop Test, valores limites frontera, mockObject*/
+		/*Loop Testing, valores limites frontera, mockObject, Pairwise testing*/
 		tablero.setNMinas(2);
 		tablero.crearTablero(2, 2);
 		
@@ -54,7 +54,6 @@ class TestTablero {
 				tableroTest [i][j] = casilla;
 			}
 		}
-		
 		int minas = 0;
 		for(int i = 0; i< 2; i++) {
 			for(int j = 0; j< 2; j++) {
