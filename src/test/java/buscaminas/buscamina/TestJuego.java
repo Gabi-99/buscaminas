@@ -167,7 +167,7 @@ class TestJuego {
 	 */
 	@Test
 	public void testSeleccionarCasilla(){
-		/*TDD, Valores limites frontera, particiones equivalentes*/
+		/*TDD, Valores limites frontera, particiones equivalentes, pairwise test*/
 		
 		juego.iniciarJuego("2 2 2");
 		
@@ -202,6 +202,16 @@ class TestJuego {
 	    //Encima del limite inferior
 	    juego.selecionarCasilla("1 3");
 	    assertFalse(juego.datosCorrectos());
+	    
+	    //pairwise test. Posibles entradas para tablero de 2 * 2 
+	    juego.selecionarCasilla("0 0");
+	    assertTrue(juego.datosCorrectos());
+	    juego.selecionarCasilla("0 1");
+	    assertTrue(juego.datosCorrectos());
+	    juego.selecionarCasilla("1 0");
+	    assertTrue(juego.datosCorrectos());
+	    juego.selecionarCasilla("1 1");
+	    assertTrue(juego.datosCorrectos());
 		
 	}
 	/*

@@ -32,7 +32,7 @@ class TestTablero {
 	 */
 	@Test
 	public void testCrearTablero() {
-		/*Loop Testing, valores limites frontera, mockObject, Pairwise testing*/
+		/*Loop Testing, valores limites frontera, mockObject*/
 		tablero.setNMinas(2);
 		tablero.crearTablero(2, 2);
 		
